@@ -23,7 +23,7 @@ The initial approach focused on correctness using standard Java patterns.
 This version shifts from heap-based I/O to the **Foreign Function & Memory (FFM) API**, a modern feature of JDK 21.
 * **Zero-Copy I/O:** Used `MemorySegment` to map the measurement file directly into memory. This bypasses the overhead of copying data between the OS kernel and the JVM heap.
 * **Efficient Parsing:** By interacting directly with raw memory addresses, the implementation avoids the "String object" overhead entirely.
-* **Result:** Achieved a **6.4x speedup** over the baseline, effectively removing the I/O bottleneck.
+* **Result:** Achieved a **3.6x speedup** over the baseline, effectively removing the I/O bottleneck.
 ## 🔬 Key Optimizations
 * **Foreign Function & Memory (FFM) API:** Direct memory mapping for ultra-fast, zero-copy I/O.
 * **Manual Byte Parsing:** Bypassing `Double.parseDouble()` to avoid object allocation in the hot loop.
