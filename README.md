@@ -13,6 +13,13 @@ The project demonstrates the transition from **standard Java I/O** to **low-leve
 | **v2.0** | **FFM API (MemorySegments)** | **53,040 ms** | **~6.4x** | 🏆 |
 
 > **Note:** Performance was measured on a 1-billion row dataset (~13GB).
+## 📊 Performance Results
+
+The transition from standard Java patterns to the optimized FFM API yielded substantial improvements across all key performance metrics.
+
+![Detailed performance analysis dashboard showing time savings, throughput, memory efficiency, and speedup.](assets/1brc_detailed_analysis.png)
+
+*Comparison details based on processing 1,000,000,000 rows of temperature data on [Insert Your CPU Specs/RAM here, e.g., 16GB RAM].*
 ## 🛠️ Technical Deep Dive
 
 ### 🔹 v1.0: The Idiomatic Baseline
