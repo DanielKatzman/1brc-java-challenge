@@ -11,7 +11,7 @@ The transition from standard Java patterns to the optimized FFM API yielded subs
 
 ![Detailed performance analysis dashboard showing time savings, throughput, memory efficiency, and speedup.](assets/1brc_detailed_analysis.png)
 
-*Comparison details based on processing 1,000,000,000 rows of temperature data on [Insert Your CPU Specs/RAM here, e.g., 16GB RAM].*
+*Comparison details based on processing 1,000,000,000 rows of temperature data on [intel core i7 16GB RAM].*
 ## 🛠️ Technical Deep Dive
 
 ### 🔹 v1.0: The Idiomatic Baseline
