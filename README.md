@@ -5,14 +5,6 @@ This repository contains my implementation of the **[1BRC](https://github.com/gu
 
 The project demonstrates the transition from **standard Java I/O** to **low-level memory management**, focusing on reducing GC pressure and maximizing I/O throughput.
 
-## 📈 Performance Evolution
-
-| Version | Approach | Execution Time | Speedup | Status |
-| :--- | :--- | :--- | :--- | :---: |
-| **v1.0** | `BufferedReader` Baseline | ~340,000 ms | 1.0x | 🐌 |
-| **v2.0** | **FFM API (MemorySegments)** | **53,040 ms** | **~6.4x** | 🏆 |
-
-> **Note:** Performance was measured on a 1-billion row dataset (~13GB).
 ## 📊 Performance Results
 
 The transition from standard Java patterns to the optimized FFM API yielded substantial improvements across all key performance metrics.
