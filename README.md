@@ -36,8 +36,8 @@ The **1 Billion Row Challenge** is more than just a coding exercise; it’s a de
 In standard software engineering, we prioritize readability and use high-level abstractions like `Double.parseDouble()` and `java.util.Scanner`. However, at the scale of **1,000,000,000 rows**, these abstractions become massive bottlenecks.
 * **The Reality:** Every `String` object created in a hot loop adds nanoseconds that aggregate into **minutes** of delay. Reaching sub-minute performance required moving to raw byte manipulation.
 
-### 2. Mechanical Sympathy & Zero-Copy I/O
-The jump to **v2.0** taught me the importance of "Mechanical Sympathy"—writing code that works in harmony with the hardware.
+### 2. Zero-Copy I/O
+The jump to **v2.0** taught me the importance of writing code that works in harmony with the hardware.
 * **FFM API:** Using the **Foreign Function & Memory API** allowed me to map the 13GB file directly into memory. This bypassed the expensive "copying" phase where the OS moves data from disk to kernel, and then to the JVM heap. 
 * **Insight:** For data-intensive applications, the fastest way to process data is to never move it at all.
 
@@ -46,7 +46,7 @@ In the baseline version, the Garbage Collector (GC) was working overtime to clea
 * **Observation:** Performance isn't just about how fast your code runs; it's about how much "tax" the JVM pays to manage your memory. By using **Memory Segments**, I achieved a near-zero allocation profile, letting the CPU focus entirely on calculation rather than cleanup.
 
 ### 4. The "Clean Code" vs. "Performance Code" Trade-off
-This project highlighted a critical engineering reality: **High performance often requires "ugly" code.** * **Reflection:** To achieve the **6.4x speedup** seen in v2.0, I had to abandon some "Clean Code" principles (like high-level encapsulation) in favor of primitive-heavy, low-level logic. Knowing *when* to make this trade-off is a vital skill for any Software Engineer.
+This project highlighted a critical engineering reality: **High performance often requires "ugly" code.** * **Reflection:** To achieve the **3.6x speedup** seen in v2.0, I had to abandon some "Clean Code" principles (like high-level encapsulation) in favor of primitive-heavy, low-level logic. Knowing *when* to make this trade-off is a vital skill for any Software Engineer.
 
 ---
 
